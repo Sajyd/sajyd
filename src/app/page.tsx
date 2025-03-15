@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
 import TSParticles from "@/components/Particles";
-import { EmailSubscribe } from "@/components/EmailSubscribe";
 import Image from 'next/image';
 
 const CalendlyWidget = () => {
