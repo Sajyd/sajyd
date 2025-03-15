@@ -39,10 +39,10 @@ export const EmailSubscribe = () => {
   };
 
   return (
-    <div className="flex gap-2 mt-6 w-full">
+    <div className="flex flex-col md:flex-row gap-2 mt-6 w-full">
       <input 
         type="email" 
-        placeholder="Enter email address"
+        placeholder="Entrez votre email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className="bg-[rgba(255,255,255,0.1)] px-4 py-2 rounded-lg flex-1 focus:outline-none focus:ring-2 focus:ring-white/20"
@@ -59,12 +59,12 @@ export const EmailSubscribe = () => {
         }`}
       >
         {error 
-          ? 'Error!' 
+          ? 'Erreur!' 
           : isSubmitted 
-            ? 'Sent!' 
+            ? 'Envoyé!' 
             : isLoading 
-              ? 'Sending...' 
-              : <>Join <span className="hidden md:inline">waitlist</span></>
+              ? 'Envoi...' 
+              : <>Programmer</>
         }
       </button>
     </div>

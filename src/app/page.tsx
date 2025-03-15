@@ -4,12 +4,35 @@ import TSParticles from "@/components/Particles";
 import { EmailSubscribe } from "@/components/EmailSubscribe";
 import Image from 'next/image';
 
+const CalendlyWidget = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <div className="w-full h-full animate-blurIn md:mt-10 scale-[0.9] md:scale-[1]">
+      <div 
+        className="calendly-inline-widget w-full h-full" 
+        data-url="https://calendly.com/sajydmounib/30min?hide_gdpr_banner=1&background_color=001&text_color=ffffff&primary_color=fafafa"
+      />
+    </div>
+  );
+};
+
 export default function Home() {
 
   const [colors, setColors] = useState({
     glow1: { r: 0, g: 0, b: 0 },
     glow2: { r: 0, g: 0, b: 0 }
   });
+
+  const [scheduling, setScheduling] = useState(false) 
 
   useEffect(() => {
     setColors({
@@ -65,14 +88,14 @@ export default function Home() {
         </div> */}
         
 
-        <div className="absolute bottom-0 left-0 w-1/2 h-screen bg-gradient-to-r from-black via-black to-transparent z-10 transform-gpu blur-xl -translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-screen bg-gradient-to-r from-black via-black to-transparent z-10 transform-gpu blur-xl -translate-x-1/2 pointer-events-none" />
         {/* Right to center gradient mask */}
-        <div className="absolute bottom-0 right-0 w-1/2 h-screen bg-gradient-to-l from-black via-black to-transparent z-10 transform-gpu blur-xl translate-x-1/2" />
+        <div className="absolute bottom-0 right-0 w-1/2 h-screen bg-gradient-to-l from-black via-black to-transparent z-10 transform-gpu blur-xl translate-x-1/2 pointer-events-none" />
             
         {/* Outer glow */}
         <div className="absolute bottom-[-10%] w-screen">
           <div 
-            className="absolute left-0 right-0 h-[75vh] -top-20 h-[700px]:-top-48"
+            className={`absolute left-0 right-0 h-[75vh] transition-[top] duration-500 ease-in-out ${scheduling ? 'top-2' : '-top-24'} `}
           >
             {/* Base glow layers */}
             {/* <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-screen h-[75vh] bg-white/40 rounded-[500%] blur-lg transform-gpu" />
@@ -89,62 +112,73 @@ export default function Home() {
         </div>
         
         
-        <div className="relative flex flex-col items-center animate-fallDown w-5/6 md:w-full mb-20 md:mb-0">
-          {/* Profile image */}
-          <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
-            <Image 
-              src="/profile.jpg" 
-              alt="Profile" 
-              width={96}
-              height={96}
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Social links */}
-          <div className="flex gap-4 mb-8">
-            <a href="https://www.instagram.com/sajyd" className="px-4 py-2 bg-[rgba(255,255,255,0.1)] rounded-full text-sm hover:bg-[rgba(255,255,255,0.2)] transition-colors flex flex-row gap-1 items-center justify-center">
+        {!scheduling ? (
+          <div className="relative flex flex-col items-center animate-blurOut w-5/6 md:w-full mb-20 md:mb-0">
+            {/* Profile image */}
+            <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
               <Image 
-                alt="instagram icon" 
-                src="/instagram.webp" 
-                width={16}
-                height={16}
-                className='h-4 w-4'
+                src="/profile.jpg" 
+                alt="Profile" 
+                width={96}
+                height={96}
+                className="w-full h-full object-cover"
               />
-              <span>@sajyd</span>
-            </a>
-            <a href="https://www.linkedin.com/in/sajyd/" className="px-4 py-2 bg-[rgba(255,255,255,0.1)] rounded-full text-sm hover:bg-[rgba(255,255,255,0.2)] transition-colors flex flex-row gap-1 items-center justify-center">
-              <Image 
-                alt="linkedin icon" 
-                src="/linkedin.webp" 
-                width={16}
-                height={16}
-                className='h-4 w-4'
-              />
-              <span>@sajyd</span>
-            </a>
-          </div>
+            </div>
 
-          {/* Main content */}
-          <div className="text-center space-y-4 animate-fadeIn scale-[0.8] md:scale-[1] md:max-w-[600px] w-full flex flex-col items-center">
-            <h1 className="text-5xl flex justify-center gap-2 ">
-              <span className="animate-[fadeIn_1s_ease-in]">
-                <strong>Join</strong>
-              </span>
-              <span className="animate-[fadeIn_1s_ease-in_0.5s] italic font-serif font-cursive opacity-0 [animation-fill-mode:forwards]">
-                my
-              </span>
-              <span className="font-serif italic font-cursive animate-[fadeIn_1s_ease-in_1s] opacity-0 [animation-fill-mode:forwards]">
-                waitlist.
-              </span>
-            </h1>
-            <p className="text-neutral-400">
-              Be first in line for private events, 1:1 coaching & more. Limited spots.
-            </p>
-            
-            <EmailSubscribe />
+            {/* Social links */}
+            <div className="flex gap-4 mb-8">
+              <a href="https://www.instagram.com/sajyd" className="px-4 py-2 bg-[rgba(255,255,255,0.1)] rounded-full text-sm hover:bg-[rgba(255,255,255,0.2)] transition-colors flex flex-row gap-1 items-center justify-center">
+                <Image 
+                  alt="instagram icon" 
+                  src="/instagram.webp" 
+                  width={16}
+                  height={16}
+                  className='h-4 w-4'
+                />
+                <span>@sajyd</span>
+              </a>
+              <a href="https://www.linkedin.com/in/sajyd/" className="px-4 py-2 bg-[rgba(255,255,255,0.1)] rounded-full text-sm hover:bg-[rgba(255,255,255,0.2)] transition-colors flex flex-row gap-1 items-center justify-center">
+                <Image 
+                  alt="linkedin icon" 
+                  src="/linkedin.webp" 
+                  width={16}
+                  height={16}
+                  className='h-4 w-4'
+                />
+                <span>@sajyd</span>
+              </a>
+            </div>
+
+            {/* Main content */}
+            <div className="text-center space-y-4 animate-fadeIn scale-[0.8] md:scale-[1] md:max-w-[600px] w-full flex flex-col items-center -mt-10 md:mt-0">
+              <h1 className="text-5xl flex flex-col md:flex-row justify-center gap-2 ">
+                <span className="animate-[fadeIn_1s_ease-in]">
+                  <strong>Prendre</strong>
+                </span>
+                {/* <span className="animate-[fadeIn_1s_ease-in_0.5s] italic font-serif font-cursive opacity-0 [animation-fill-mode:forwards]">
+                  un
+                </span> */}
+                <span className="font-serif italic font-cursive animate-[fadeIn_1s_ease-in_1s] opacity-0 [animation-fill-mode:forwards]">
+                  rendez-vous.
+                </span>
+              </h1>
+              <p className="text-neutral-400">
+                Soyez le premier sur la liste pour un coaching personnalisé.
+              </p>
+              <button 
+        onClick={() => setScheduling(true)}
+        className={`px-6 py-2 rounded-lg transition-colors ${
+          'bg-white text-black hover:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-white'
+        }`}
+      >
+        <>Programmer</>
+      </button>
+              {/* <EmailSubscribe /> */}
+            </div>
           </div>
-        </div>
+        ) : (
+          <CalendlyWidget />
+        )}
       </div>
     </div>
   );

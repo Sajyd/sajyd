@@ -33,7 +33,15 @@ module.exports = {
         blurIn: {
           '0%': { filter: 'blur(8px)', opacity: '0' },
           '100%': { filter: 'blur(0)', opacity: '1' }
-        }
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        blurOut: {
+          '0%': { filter: 'blur(0)', opacity: '1' },
+          '100%': { filter: 'blur(8px)', opacity: '0' },
+        },
       },
       animation: {
         fallDown: 'fallDown 1s ease-out forwards',
@@ -42,7 +50,9 @@ module.exports = {
         'glow-2': 'glow2 18s ease-in-out infinite',
         'glow-float-1': 'glow-float-1 20s ease-in-out infinite',
         'glow-float-2': 'glow-float-2 25s ease-in-out infinite',
-        blurIn: 'blurIn 0.8s ease-out forwards'
+        blurIn: 'blurIn 0.8s ease-out forwards',
+        fadeIn: 'fadeIn 1s ease-in forwards',
+        blurOut: 'blurOut 0.5s ease-out forwards'
       },
       screens: {
         'max-h-700': {'raw': '(max-height: 700px)'}
