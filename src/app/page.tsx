@@ -26,8 +26,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#001] text-white selection:bg-white selection:text-black overflow-hidden">
-      <div className="absolute inset-0 z-1 translate-y-1/6">
+    <div className="h-screen bg-[#001] text-white selection:bg-white selection:text-black overflow-hidden">
+      <div className="absolute inset-0 z-1 translate-y-1/6 overflow-hidden">
         <TSParticles/>
         {/* Radial mask for particles */}
       </div>
