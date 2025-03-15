@@ -5,6 +5,7 @@ import { EmailSubscribe } from "@/components/EmailSubscribe";
 import Image from 'next/image';
 
 export default function Home() {
+
   const [colors, setColors] = useState({
     glow1: { r: 0, g: 0, b: 0 },
     glow2: { r: 0, g: 0, b: 0 }
@@ -46,7 +47,9 @@ export default function Home() {
         </div>
         
         {/* Cosmic horizon effect */}
-        <div className="absolute top-[65%] w-full h-[400px] bg-gradient-to-t from-black via-purple-900/10 to-transparent" />
+        <div 
+          className="absolute w-full h-[400px] bg-gradient-to-t from-black via-purple-900/10 to-transparent top-[calc(100%-6rem)] max-h-[700px]:top-[75%]" 
+        />
         
         {/* Multiple propulsion light beams */}
         {/* <div className="absolute top-[40%] w-full flex justify-center">
@@ -68,8 +71,10 @@ export default function Home() {
             
         {/* Outer glow */}
         <div className="absolute bottom-[-10%] w-screen">
-          <div className="absolute -top-48 left-0 right-0 h-[75vh] ">
-           {/* Base glow layers */}
+          <div 
+            className="absolute left-0 right-0 h-[75vh] -top-20 h-[700px]:-top-48"
+          >
+            {/* Base glow layers */}
             {/* <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-screen h-[75vh] bg-white/40 rounded-[500%] blur-lg transform-gpu" />
             <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-screen h-[75vh] bg-white/55 rounded-[500%] blur-lg transform-gpu" /> */}
             
@@ -121,8 +126,8 @@ export default function Home() {
           </div>
 
           {/* Main content */}
-          <div className="text-center space-y-4 animate-fadeIn max-w-[600px] w-[90%] md:w-full">
-            <h1 className="text-5xl flex justify-center gap-2">
+          <div className="text-center space-y-4 animate-fadeIn scale-[0.8] md:scale-[1] md:max-w-[600px] w-full flex flex-col items-center">
+            <h1 className="text-5xl flex justify-center gap-2 ">
               <span className="animate-[fadeIn_1s_ease-in]">
                 <strong>Join</strong>
               </span>
