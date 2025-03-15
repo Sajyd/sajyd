@@ -101,7 +101,7 @@ export default function Home() {
             <a href="https://www.instagram.com/sajyd" className="px-4 py-2 bg-[rgba(255,255,255,0.1)] rounded-full text-sm hover:bg-[rgba(255,255,255,0.2)] transition-colors flex flex-row gap-1 items-center justify-center">
               <Image 
                 alt="instagram icon" 
-                src="/instagram.png" 
+                src="/instagram.webp" 
                 width={16}
                 height={16}
                 className='h-4 w-4'
@@ -111,7 +111,7 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/sajyd/" className="px-4 py-2 bg-[rgba(255,255,255,0.1)] rounded-full text-sm hover:bg-[rgba(255,255,255,0.2)] transition-colors flex flex-row gap-1 items-center justify-center">
               <Image 
                 alt="linkedin icon" 
-                src="/linkedin.png" 
+                src="/linkedin.webp" 
                 width={16}
                 height={16}
                 className='h-4 w-4'
