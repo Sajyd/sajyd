@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TSParticles from "@/components/Particles";
-import { Ribbon } from "@/components/Ribbon";
 import { EmailSubscribe } from "@/components/EmailSubscribe";
+import Image from 'next/image';
 
 export default function Home() {
   const [colors, setColors] = useState({
@@ -87,9 +87,11 @@ export default function Home() {
         <div className="relative flex flex-col items-center animate-fallDown w-5/6 md:w-full mb-20 md:mb-0">
           {/* Profile image */}
           <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
-            <img 
+            <Image 
               src="/profile.jpg" 
               alt="Profile" 
+              width={96}
+              height={96}
               className="w-full h-full object-cover"
             />
           </div>
@@ -97,16 +99,24 @@ export default function Home() {
           {/* Social links */}
           <div className="flex gap-4 mb-8">
             <a href="https://www.instagram.com/sajyd" className="px-4 py-2 bg-[rgba(255,255,255,0.1)] rounded-full text-sm hover:bg-[rgba(255,255,255,0.2)] transition-colors flex flex-row gap-1 items-center justify-center">
-             <img src="https://framerusercontent.com/images/YA9wo6pnHaHG3F4blmpS7EP8SDg.png" className='h-4 w-4'/>
-             <span>
-              @sajyd
-              </span>
+              <Image 
+                alt="instagram icon" 
+                src="/instagram.png" 
+                width={16}
+                height={16}
+                className='h-4 w-4'
+              />
+              <span>@sajyd</span>
             </a>
             <a href="https://www.linkedin.com/in/sajyd/" className="px-4 py-2 bg-[rgba(255,255,255,0.1)] rounded-full text-sm hover:bg-[rgba(255,255,255,0.2)] transition-colors flex flex-row gap-1 items-center justify-center">
-             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png" className='h-4 w-4'/>
-             <span>
-              @sajyd
-              </span>
+              <Image 
+                alt="linkedin icon" 
+                src="/linkedin.png" 
+                width={16}
+                height={16}
+                className='h-4 w-4'
+              />
+              <span>@sajyd</span>
             </a>
           </div>
 
