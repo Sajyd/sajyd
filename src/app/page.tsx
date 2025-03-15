@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#001] text-white selection:bg-white selection:text-black overflow-hidden">
-      <div className="absolute inset-0 z-1">
+      <div className="absolute inset-0 z-1 translate-y-1/6">
         <TSParticles/>
         {/* Radial mask for particles */}
       </div>
@@ -36,11 +36,11 @@ export default function Home() {
         {/* Animated colored glows */}
         <div className="absolute w-full h-full flex items-center justify-center">
           <div 
-            className="absolute w-[300px] md:w-[30vw] h-[500px] md:h-[50vw] -bottom-20 rounded-full blur-[100px] animate-glow-float-1 -translate-x-1/4" 
+            className="absolute w-[300px] md:w-[30vw] h-[700px] md:h-[50vw] -bottom-20 rounded-full blur-[100px] animate-glow-float-1 -translate-x-1/4" 
             style={{ backgroundColor: `rgba(${colors.glow1.r}, ${colors.glow1.g}, ${colors.glow1.b}, 0.125)` }}
           />
           <div 
-            className="absolute w-[450px] md:w-[45vw] h-[450px] md:h-[45vw] -bottom-20 rounded-full blur-[100px] animate-glow-float-2 translate-x-1/4"
+            className="absolute w-[450px] md:w-[45vw] h-[650px] md:h-[45vw] -bottom-20 rounded-full blur-[100px] animate-glow-float-2 translate-x-1/4"
             style={{ backgroundColor: `rgba(${colors.glow2.r}, ${colors.glow2.g}, ${colors.glow2.b}, 0.125)` }}
           />
         </div>
@@ -78,8 +78,8 @@ export default function Home() {
             <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[25vw] h-[75vh] bg-white/80 rounded-[500%] blur-xl transform-gpu" />
              */}
             {/* Dark border to contain the glow */}
-            <div className="absolute -top-34 left-1/2 -translate-x-1/2 w-[200vw] md:w-[150vw] h-[75vh] shadow-[0_0px_100px_10px_rgba(255,255,255,0.4),inset_0_0_50px_rgba(255,255,255,0.15)] bg-white z-1 rounded-[100%] transform-gpu" />
-            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[250vw] md:w-[175vw] h-[75vh] shadow-[0_-15px_20px_-12px_rgba(255,255,255,0.15),inset_0_0_20px_rgba(255,255,255,1)] bg-[#001]  z-2 rounded-[100%] transform-gpu" />
+            <div className="absolute -top-34 left-1/2 -translate-x-1/2 w-[300vw] md:w-[150vw] h-[75vh] shadow-[0_0px_100px_10px_rgba(255,255,255,0.4),inset_0_0_50px_rgba(255,255,255,0.15)] bg-white z-1 rounded-[100%] transform-gpu" />
+            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500vw] md:w-[175vw] h-[75vh] shadow-[0_-15px_20px_-12px_rgba(255,255,255,0.15),inset_0_0_20px_rgba(255,255,255,1)] bg-[#001]  z-2 rounded-[100%] transform-gpu" />
           </div>
         </div>
         
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
 
           {/* Main content */}
-          <div className="text-center space-y-4 animate-fadeIn max-w-[600px]">
+          <div className="text-center space-y-4 animate-fadeIn max-w-[600px] w-[90%] md:w-full">
             <h1 className="text-5xl flex justify-center gap-2">
               <span className="animate-[fadeIn_1s_ease-in]">
                 <strong>Join</strong>

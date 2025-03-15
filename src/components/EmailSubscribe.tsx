@@ -39,7 +39,7 @@ export const EmailSubscribe = () => {
   };
 
   return (
-    <div className="flex gap-2 mt-6">
+    <div className="flex gap-2 mt-6 w-full">
       <input 
         type="email" 
         placeholder="Enter email address"
