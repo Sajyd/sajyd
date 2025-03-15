@@ -157,7 +157,7 @@ html, body {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 1s ease-out;
+  animation: fadeIn 1s ease-in-out;
 } 
 
 .bg-cosmic-light {

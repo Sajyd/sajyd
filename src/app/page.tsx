@@ -151,17 +151,17 @@ export default function Home() {
             {/* Main content */}
             <div className="text-center space-y-4 animate-fadeIn scale-[0.8] md:scale-[1] md:max-w-[600px] w-full flex flex-col items-center -mt-10 md:mt-0">
               <h1 className="text-5xl flex flex-col md:flex-row justify-center gap-2 ">
-                <span className="animate-[fadeIn_1s_ease-in]">
+                <span className="animate-[fadeIn_1s_ease-in-out]">
                   <strong>Prendre</strong>
                 </span>
                 {/* <span className="animate-[fadeIn_1s_ease-in_0.5s] italic font-serif font-cursive opacity-0 [animation-fill-mode:forwards]">
                   un
                 </span> */}
-                <span className="font-serif italic font-cursive animate-[fadeIn_1s_ease-in_1s] opacity-0 [animation-fill-mode:forwards]">
+                <span className="font-serif italic font-cursive animate-[fadeIn_1s_ease-in-out_0.5s] opacity-0 [animation-fill-mode:forwards]">
                   rendez-vous.
                 </span>
               </h1>
-              <p className="text-neutral-400">
+              <p className="text-neutral-400 ">
                 Soyez le premier sur la liste pour un coaching personnalisé.
               </p>
               <button 
